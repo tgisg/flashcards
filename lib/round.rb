@@ -1,12 +1,16 @@
-#DON'T FORGET TO REQUIRE CARD, GUESS, AND DECK
+require_relative "./card"
+require_relative "./guess"
+require_relative "./deck"
 
 class Round
 attr_reader :deck
 attr_accessor :guesses
+attr_accessor :counter
 
   def initialize(deck)
     @deck = deck
     @guesses = []
+    @counter = 0
   end
 
   def current_card
@@ -15,8 +19,22 @@ attr_accessor :guesses
   end
 
   def record_guess(guess)
-    @guesses << guess 
-    # @guesses.shift
+    @guesses << guess
+    guess
+  end
+
+  def number_correct
+    #you may need to run the method record_guess in here for purposes of the wrapper?
+      @guesses.map do |guess|
+        if guess.response == guess.card.answer
+         @counter = @counter + 1
+        end
+      end
+      @counter
+  end
+
+  def percent_correct
+    (number_correct.to_f / @guesses.length.to_f) * 100
   end
 
 

@@ -1,4 +1,5 @@
-#DONT FORGET TO REQUIRE CARD.RB
+require_relative "./card"
+
 class Deck
 attr_reader :cards
 
@@ -9,7 +10,5 @@ attr_reader :cards
   def count
     cards.count
   end
-
-
 
 end
