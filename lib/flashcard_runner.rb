@@ -24,13 +24,28 @@ require_relative "./deck"
 require_relative "./round"
 require "pry"
 
-class FlashCardRunner
+card_1 = Card.new("What is the capital of Alaska?", "Juneau")
+card_2 = Card.new("Approximately how many miles are in one astronomical unit?", "93,000,000")
+card_3 = Card.new("On which street is Turing located?", "Blake")
+card_4 = Card.new("How many months are in a year?", "12")
+card_5 = Card.new("How many inches are in a foot?", "12")
+deck = Deck.new([card_1, card_2, card_3, card_4, card_5])
+round = Round.new(deck)
 
-  def start_game
-    puts "Welcome! You're playing with #{deck.count} cards.\n------------------------------------------"
-    puts "This is card number #{(deck.length)-(deck.)}"
-
-
-  end
-
+deck_start = deck.count
+puts ""
+puts "Welcome! You're playing with #{deck.count} cards.\n"
+puts "-------------------------------------------------\n"
+until deck.count == 0
+puts "This is card number #{(deck.count) - (deck.count-1)} out of #{deck_start}"
+card = round.current_card
+puts card.question
+guess = Guess.new(gets.chomp, card)
+round.record_guess(guess)
+puts guess.feedback
+puts round.number_correct
+puts round.percent_correct
 end
+# puts "****** GAME OVER!!! ******\n"
+# puts "You had #{round.number_correct} out of #{deck_start} for a score of #{round.percent_correct}"
+# #need to instantiate guess class right here

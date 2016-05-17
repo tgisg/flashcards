@@ -24,7 +24,6 @@ attr_accessor :counter
   end
 
   def number_correct
-    #you may need to run the method record_guess in here for purposes of the wrapper?
       @guesses.map do |guess|
         if guess.response == guess.card.answer
          @counter = @counter + 1
@@ -34,10 +33,8 @@ attr_accessor :counter
   end
 
   def percent_correct
-    (number_correct.to_f / @guesses.length.to_f) * 100
+    ((number_correct.to_f / @guesses.length.to_f) * 100)
   end
-
-
 
 
 end
