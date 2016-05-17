@@ -26,14 +26,18 @@ class RoundTest < Minitest::Test
     assert_equal [], round.guesses
   end
 
-  def test_it_points_to_the_current_card
+  def test_it_points_to_the_current_card_after_running_the_previous_card
     card_1 = Card.new("What is the capital of Alaska?", "Juneau")
     card_2 = Card.new("Approximately how many miles are in one astronomical unit?", "93,000,000")
-    deck = Deck.new([card_1, card_2])
+    card_3 = Card.new("How many inches are in a foot?", "12")
+    deck = Deck.new([card_1, card_2, card_3])
     round = Round.new(deck)
 
     assert_equal card_1, round.current_card
+    assert_equal card_2, round.current_card
+    assert_equal card_3, round.current_card
   end
+
 
   def test_it_records_a_single_guess
     card_1 = Card.new("What is the capital of Alaska?", "Juneau")
