@@ -36,16 +36,22 @@ deck_start = deck.count
 puts ""
 puts "Welcome! You're playing with #{deck.count} cards.\n"
 puts "-------------------------------------------------\n"
+
 until deck.count == 0
-puts "This is card number #{(deck.count) - (deck.count-1)} out of #{deck_start}"
+puts "This is card number #{(deck_start - deck.count) + 1} out of #{deck_start}"
 card = round.current_card
 puts card.question
+puts ""
 guess = Guess.new(gets.chomp, card)
+puts ""
 round.record_guess(guess)
 puts guess.feedback
-puts round.number_correct
-puts round.percent_correct
+puts ""
+puts "You currently have #{round.number_correct} correct answer(s) with an accuracy of %#{round.percent_correct}"
+puts "-------------------------------------------------\n"
 end
-# puts "****** GAME OVER!!! ******\n"
-# puts "You had #{round.number_correct} out of #{deck_start} for a score of #{round.percent_correct}"
-# #need to instantiate guess class right here
+
+puts "****** GAME OVER!!! ******\n"
+puts ""
+puts "You had #{round.number_correct} out of #{deck_start} for a score of #{round.percent_correct}"
+puts ""

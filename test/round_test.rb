@@ -46,7 +46,7 @@ class RoundTest < Minitest::Test
     round = Round.new(deck)
     guess = Guess.new("Juneau", card_1)
 
-    assert_equal guess, round.record_guess(guess) #is there a a problem here that you need to resolve? Your expected answer has to be in an array for the test to pass, does that affect overall functionality? --> NO LONGER A PROBLEM! WHEN YOU RETURN SIMPLY THE GUESS AT THE END OF YOUR RECORD_GUESS METHOD, IT JUST GIVES YOU THAT, WHICH WORKS. BUT IT DOESN'T CHANGE THE BENEFIT OF @GUESSES STORING THE GUESS. COOL BEANS
+    assert_equal guess, round.record_guess(guess)
   end
 
   def test_it_counts_a_single_guess

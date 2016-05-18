@@ -1,6 +1,7 @@
 require_relative "./card"
 require_relative "./guess"
 require_relative "./deck"
+require "pry"
 
 class Round
 attr_reader :deck
@@ -24,17 +25,16 @@ attr_accessor :counter
   end
 
   def number_correct
-      @guesses.map do |guess|
-        if guess.response == guess.card.answer
-         @counter = @counter + 1
-        end
+    counter = 0
+    @guesses.map do |guess|
+      if guess.response == guess.card.answer
+        counter += 1
       end
-      @counter
+    end
+    counter
   end
 
   def percent_correct
     ((number_correct.to_f / @guesses.length.to_f) * 100)
   end
-
-
 end
