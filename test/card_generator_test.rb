@@ -26,14 +26,4 @@ class CardGeneratorTest < Minitest::Test
     assert_equal [["What is 5 + 5?", "10"], ["What is Rachel's favorite animal?", "red panda"], ["What is Mike's middle name?", "nobody knows"], ["What cardboard cutout lives at Turing?", "Justin Bieber"]], cards.separate_cards_into_question_and_answer
   end
 
-  def test_it_makes_a_single_card_out_of_a_question_and_answer
-    filename = "./lib/cards.txt"
-    cards = CardGenerator.new(filename)
-    # card = Card.new("What is 5+5?", "10")
-
-    deck = cards.make_a_deck
-    assert_equal("What is 5 + 5?", card.question)
-    assert_equal("10", card.answer)
-  end
-
 end
