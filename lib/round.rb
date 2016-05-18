@@ -4,9 +4,8 @@ require_relative "./deck"
 require "pry"
 
 class Round
-attr_reader :deck
-attr_accessor :guesses
-attr_accessor :counter
+  attr_reader :deck
+  attr_accessor :guesses, :counter
 
   def initialize(deck)
     @deck = deck
@@ -15,7 +14,6 @@ attr_accessor :counter
   end
 
   def current_card
-    #I need to figure out how to bring the first card in the array to the fore and use it, and discard it.
     deck.cards.shift
   end
 
@@ -37,4 +35,5 @@ attr_accessor :counter
   def percent_correct
     ((number_correct.to_f / @guesses.length.to_f) * 100)
   end
+
 end
