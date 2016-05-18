@@ -42,7 +42,6 @@ class DeckTest < Minitest::Test
 
     #make a deck with cards in it
     deck = Deck.new([card_1, card_2, card_3])
-
     #check if the cards in the deck can be counted
     assert_equal 3, deck.count
   end

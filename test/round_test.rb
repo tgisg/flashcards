@@ -199,5 +199,5 @@ class RoundTest < Minitest::Test
 
     assert_equal 40, round.percent_correct
   end
-#your next test records multiple guesses, and the one after counts multiple guesses, then you want to test incorrect guesses as well
+  
 end
