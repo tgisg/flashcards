@@ -4,7 +4,6 @@ require_relative "../lib/round"
 require_relative "../lib/deck"
 require_relative "../lib/card"
 require_relative "../lib/guess"
-require "pry"
 
 class RoundTest < Minitest::Test
 
@@ -199,5 +198,5 @@ class RoundTest < Minitest::Test
 
     assert_equal 40, round.percent_correct
   end
-  
+
 end

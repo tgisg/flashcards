@@ -2,7 +2,6 @@ require "minitest/autorun"
 require "minitest/pride"
 require_relative "../lib/deck"
 require_relative "../lib/card"
-require "pry"
 
 class DeckTest < Minitest::Test
 
@@ -39,5 +38,5 @@ class DeckTest < Minitest::Test
 
     assert_equal 3, deck.count
   end
-  
+
 end

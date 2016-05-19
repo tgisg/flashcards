@@ -1,5 +1,4 @@
 require_relative "./card"
-require "pry"
 
 class CardGenerator
 attr_reader :filename

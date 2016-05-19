@@ -1,7 +1,6 @@
 require_relative "./deck"
 require_relative "./round"
 require_relative "./card_generator"
-require "pry"
 
 filename = "./lib/cards.txt"
 cards = CardGenerator.new(filename)

@@ -1,7 +1,6 @@
 require_relative "./card"
 require_relative "./guess"
 require_relative "./deck"
-require "pry"
 
 class Round
   attr_reader :deck
@@ -43,17 +42,17 @@ class Round
     puts "-------------------------------------------------\n"
 
     until deck.count == 0
-    puts "This is card number #{(deck_start - deck.count) + 1} out of #{deck_start}"
-    card = current_card
-    puts card.question
-    puts ""
-    guess = Guess.new(gets.chomp, card)
-    puts ""
-    record_guess(guess)
-    puts guess.feedback
-    puts ""
-    puts "You currently have #{number_correct} correct answer(s) with an accuracy of %#{percent_correct}"
-    puts "-------------------------------------------------\n"
+      puts "This is card number #{(deck_start - deck.count) + 1} out of #{deck_start}"
+      card = current_card
+      puts card.question
+      puts ""
+      guess = Guess.new(gets.chomp, card)
+      puts ""
+      record_guess(guess)
+      puts guess.feedback
+      puts ""
+      puts "You currently have #{number_correct} correct answer(s) with an accuracy of %#{percent_correct}"
+      puts "-------------------------------------------------\n"
     end
 
     puts "****** GAME OVER!!! ******\n"
